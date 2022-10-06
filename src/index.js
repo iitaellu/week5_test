@@ -12,9 +12,10 @@ const fetchData = async () => {
   console.log(data);
   createHashMap(data);
   fetchMigration();
-  sleep(200).then(() => {
+  initMap(data);
+  /*sleep(200).then(() => {
     initMap(data);
-  });
+  });*/
 };
 
 //From https://www.sitepoint.com/delay-sleep-pause-wait/
