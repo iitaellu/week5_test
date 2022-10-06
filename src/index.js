@@ -2,7 +2,9 @@ import L from "leaflet";
 
 //Help from course's sourscodes
 const fetchData = async () => {
-	@@ -8,17 +10,71 @@ const fetchData = async () => {
+  const url =
+    "https://geo.stat.fi/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=tilastointialueet:kunta4500k&outputFormat=json&srsName=EPSG:4326";
+  const res = await fetch(url);
   const data = await res.json();
 
   console.log(data);
