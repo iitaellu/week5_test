@@ -12,7 +12,7 @@ const fetchData = async () => {
   console.log(data);
   createHashMap(data);
   fetchMigration();
-  sleep(2000).then(() => {
+  sleep(300).then(() => {
     initMap(data);
   });
 };
