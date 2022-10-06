@@ -22,7 +22,11 @@ const initMap = (data) => {
     onEachFeature: getFeature
   }).addTo(map);
 
-	@@ -32,33 +88,16 @@ const initMap = (data) => {
+  let osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: "© OpenStreetMap"
+  }).addTo(map);
+};
 
 const getFeature = (feature, layer) => {
   if (!feature.id) return;
