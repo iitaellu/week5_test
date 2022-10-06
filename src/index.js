@@ -12,9 +12,10 @@ const fetchData = async () => {
   console.log(data);
   createHashMap(data);
   fetchMigration();
-  sleep(300).then(() => {
+  initMap(data);
+  /*sleep(300).then(() => {
     initMap(data);
-  });
+  });*/
 };
 
 //From https://www.sitepoint.com/delay-sleep-pause-wait/
@@ -90,13 +91,13 @@ const getFeature = (feature, layer) => {
   if (!feature.id) return;
   let number = feature.properties.kunta;
   let kid = "KU" + number;
-  layer.bindPopup(
+  /*layer.bindPopup(
     `<ul>
         <li>Positive Migration: ${hashMap.get(kid).pos} </li>
         <li>Negative Migration: ${hashMap.get(kid).neg} </li>
     </ul>`
-  );
-
+  );*/
+  layer.bindPopup(feature.properties.name);
   layer.bindTooltip(feature.properties.name);
 };
 
