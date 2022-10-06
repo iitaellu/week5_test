@@ -13,12 +13,12 @@ const fetchData = async () => {
 };
 
 const initMap = (data) => {
-  let map = L.map("map", {
+  map = L.map("map", {
     minZoom: -3
   });
 
   let geoJson = L.geoJSON(data, {
-    //weight: 2,
+    weight: 2,
     onEachFeature: getFeature
   }).addTo(map);
 
@@ -26,6 +26,8 @@ const initMap = (data) => {
     maxZoom: 19,
     attribution: "© OpenStreetMap"
   }).addTo(map);
+
+  map.fitBounds(geoJson.getBounds());
 };
 
 const getFeature = (feature, layer) => {
