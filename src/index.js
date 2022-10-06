@@ -26,7 +26,7 @@ const getFeature = (feature, layer) => {
   if (!feature.id) return;
   //const id = feature.properties.id;
   //console.log(id);
-
+  layer.bindPopup(feature.properties.name);
   layer.bindTooltip(feature.properties.name);
 };
 
